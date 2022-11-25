@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>Criando classe</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+	<h2>JavaScript getters e setters</h2>
+	<p>Criando contador </p>
+	<p id="demo"></p>
+	<script>		
+	// define an object
+    const obj = {
+        cont : 0
+    };
+    //define Setters and Getters
+    Object.defineProperty(obj, "reset",{
+        get : function(){
+            this.cont = 0;
+        }
+    });
+    Object.defineProperty(obj, "increment",{
+        get : function () {
+            this.cont++;
+        }
+    });
+    Object.defineProperty(obj, "decrement", {
+        get : function () {
+            this.cont--;
+        }
+    });
+    Object.defineProperty(obj, "add", {
+        set : function(value) {
+            this.cont += value;
+        }
+    });
+    Object.defineProperty(obj, "subtract", {
+        set : function (value) {
+            this.cont -= value;
+        }
+    });
+    //play with cont;
+    obj.reset;
+    obj.add = 6;
+    obj.subtract = 1;
+    obj.increment;
+    obj.decrement;
+    document.getElementById("demo"). innerHTML = obj.cont;
+</script>
+</body>
+</html>
